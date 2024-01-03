@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛집 추천 사이트</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="left-container">
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="음식점 검색">
+            <button onclick="searchRestaurants()" id="search-button">검색</button>
+        </div>
+        <div id="results-container">
+            <!-- 검색 결과가 여기에 나타납니다. -->
+        </div>
+        <div id="reviews-container"></div>
+        <!-- 리뷰 작성 폼 -->
+        <div id="review-form" style="margin-top: 20px; display: none;">
+            <h3>리뷰 작성</h3>
+            <form id="review-form">
+                <label for="username">사용자 이름:</label>
+                <input type="text" id="username" name="username" required><br>
+
+                <label for="comment">리뷰 내용:</label>
+                <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br>
+
+                <label for="rating">평점 (1-5):</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+
+                <button type="button" onclick="submitReview()">리뷰 작성</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="right-container">
+        <div id="homepage">맛집 찾기 사이트</div>
+        <div id="category-container">
+            <div class="category" onclick="showMarkersByCategory('cafeMarkers')">카페</div>
+            <div class="category" onclick="showMarkersByCategory('koreanFoodMarkers')">한식</div>
+            <div class="category" onclick="showMarkersByCategory('westernFoodMarkers')">양식</div>
+            <div class="category" onclick="showMarkersByCategory('chineseFoodMarkers')">중식</div>
+            <div class="category" onclick="showMarkersByCategory('japaneseFoodMarkers')">일식</div>
+        </div>
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=483c9419c01eb07632dc14a27937404e"></script>
+    <script type="text/javascript" src="script.js"></script>
+    
+</body>
+</html>
